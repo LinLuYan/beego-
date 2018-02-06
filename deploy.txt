@@ -1,0 +1,14 @@
+option batch on
+option confirm off
+option transfer binary
+echo 开始上传
+open root:tTACwjxUWCH7@114.55.116.105:/opt/restart
+put study.tar.gz
+echo 开始重启
+call  tar -xzvf study.tar.gz -C study
+
+cd study
+chmod 777 study
+call supervisorctl restart study
+close
+exit
